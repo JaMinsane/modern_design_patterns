@@ -11,5 +11,10 @@ endif()
 
 project ("modern_design_patterns")
 
+# Boost
+set(BOOST_ROOT "E:/dev/cpp/libraries/boost_1_85_0")
+find_package(Boost 1.85 REQUIRED)
+include_directories(${Boost_INCLUDE_DIRS})
+
 # Include sub-projects.
 add_subdirectory ("SOLID Design Principles")
