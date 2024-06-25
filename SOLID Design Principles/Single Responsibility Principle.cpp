@@ -40,6 +40,7 @@ void Journal::save(const string& filename)
         ofs << s << endl;
 }
 
+// Separation of concerns
 struct PersistenceManager
 {
     static void save(const Journal& j, const string& filename)
