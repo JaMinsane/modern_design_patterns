@@ -1,3 +1,10 @@
+# Ignore build files
+build/
+out/
+
+# Visual Studio
+.vs/
+
 # Prerequisites
 *.d
 
@@ -30,3 +37,9 @@
 *.exe
 *.out
 *.app
+
+# Ignore log and temporary files
+*.log
+*.tmp
+*.bak
+*.swpa
