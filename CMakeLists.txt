@@ -18,3 +18,4 @@ include_directories(${Boost_INCLUDE_DIRS})
 
 # Include sub-projects.
 add_subdirectory ("SOLID Design Principles")
+add_subdirectory ("Creational Design Patterns")
