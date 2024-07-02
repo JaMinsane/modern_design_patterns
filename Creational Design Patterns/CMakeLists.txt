@@ -16,5 +16,10 @@ foreach(CPP_FILE ${CPP_FILES})
 
     target_include_directories(${EXEC_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/Factories/includes)
 
-    target_link_libraries(${EXEC_NAME} Boost::boost)
+    if (${EXEC_NAME} MATCHES "_test$")
+		target_link_libraries(${EXEC_NAME} gtest gtest_main)
+        add_test(NAME ${EXEC_NAME} COMMAND ${EXEC_NAME})
+	else()
+		target_link_libraries(${EXEC_NAME} Boost::boost)
+    endif()
 endforeach()
