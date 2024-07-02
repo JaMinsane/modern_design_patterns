@@ -43,3 +43,4 @@ out/
 *.tmp
 *.bak
 *.swpa
+/Folder.DotSettings.user
