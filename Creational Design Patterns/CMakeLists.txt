@@ -14,5 +14,7 @@ foreach(CPP_FILE ${CPP_FILES})
         set_property(TARGET ${EXEC_NAME} PROPERTY CXX_STANDARD 20)
     endif()
 
+    target_include_directories(${EXEC_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/Factories/includes)
+
     target_link_libraries(${EXEC_NAME} Boost::boost)
 endforeach()

@@ -3,7 +3,7 @@
 #### Factory: A component responsible solely for the wholesale (not piecewise) creation of objects.
 
 This section includes two design patterns that are related to the creation of objects: 
- * The Factory Method
+ * The Factory Method (Factory.cpp, Inner Factory.cpp)
  * The Abstract Factory
 
 Actually, the pattern should be called "Factory Pattern" but to follow the original book of GoF, we will discuss them separately.
