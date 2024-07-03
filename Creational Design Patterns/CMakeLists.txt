@@ -2,7 +2,8 @@
 # project specific logic here.
 #
 
-file(GLOB CPP_FILES "${CMAKE_CURRENT_SOURCE_DIR}/Factories/*.cpp")
+file(GLOB CPP_FILES "${CMAKE_CURRENT_SOURCE_DIR}/*/*.cpp")
+file(GLOB INCLUDE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/*/includes")
 
 foreach(CPP_FILE ${CPP_FILES})
     get_filename_component(EXEC_NAME ${CPP_FILE} NAME_WE)
@@ -14,7 +15,7 @@ foreach(CPP_FILE ${CPP_FILES})
         set_property(TARGET ${EXEC_NAME} PROPERTY CXX_STANDARD 20)
     endif()
 
-    target_include_directories(${EXEC_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/Factories/includes)
+    target_include_directories(${EXEC_NAME} PRIVATE ${INCLUDE_DIRS})
 
     if (${EXEC_NAME} MATCHES "_test$")
 		target_link_libraries(${EXEC_NAME} gtest gtest_main)

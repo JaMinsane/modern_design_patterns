@@ -19,3 +19,11 @@ Actually, the pattern should be called "Factory Pattern" but to follow the origi
 	* A separate method (Factory Method)
 	* That may exist in a separate class (Factory)
 	* Can create hierarchy of factories with Abstract Factory
+
+## Summary
+
+* A Factory Method is a static method that creates objects.
+* A Factory can take care of object creation.
+* A Factory can be external or reside inside the object as an inner class.
+* Hierarchies of factories can be used to create related objects. (not so common nowadays)
+
