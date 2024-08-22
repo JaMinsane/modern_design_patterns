@@ -20,7 +20,7 @@ public:
     unique_ptr<HotDrink> make_drink(const string& name)
     {
         auto drink = hot_factories[name]->make();
-        drink->prepare(200); // oops!
+        drink->prepare(200); // hardcoded for simplicity
         return drink;
     }
 };

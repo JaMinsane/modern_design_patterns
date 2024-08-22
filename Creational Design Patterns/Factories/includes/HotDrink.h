@@ -15,7 +15,7 @@ struct Tea : HotDrink
 
   void prepare(int volume) override
   {
-    cout << "Take tea bag, boil water, pour " << volume << "ml, add some lemon" << endl;
+    cout << "Take tea bag, boil water, pour " << volume << "ml, add some lemon, enjoy!" << endl;
   }
 };
 

@@ -125,7 +125,7 @@ template <typename T> struct ColoredShape2 : T
 
     string color;
 
-    // just in case you need it 
+    // default constructor
     ColoredShape2() {}
 
     template <typename...Args>
@@ -170,8 +170,18 @@ template <IsShape T> struct TransparentShape2 : T
 
 int main()
 {
+    struct NotAShape
+    {
+        virtual string str() const { return string{}; }
+    };
+
+    // we don't want this to be legal, thus a static_assert above
+	// ColoredShape2<NotAShape> legal;   // This will not compile
+
+
     // mixin inheritance
-    ColoredShape2<Circle> green_circle{ "green", 5 };
+    // won't work without a default constructor
+    ColoredShape2<Circle> green_circle{ "green"};
     green_circle.radius = 123;
     green_circle.resize(2.0f); // Previously in the dynamic decorator this was not possible
     cout << green_circle.str() << endl;
@@ -180,6 +190,16 @@ int main()
     blue_invisible_square.color = "blue";
     blue_invisible_square.side = 321;
     cout << blue_invisible_square.str() << endl;
+
+	// constructor forwarding
+
+    // no code completion for this case
+    // can comment out argument, too! (default constructor)
+    TransparentShape2<Square> hidden_square{ 1, 2 };
+    cout << hidden_square.str() << endl;
+
+    ColoredShape2<TransparentShape2<Square>> sq = { "red", 51, 5 };
+    cout << sq.str() << endl;
 
     return 0;
 }

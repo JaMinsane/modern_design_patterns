@@ -1,5 +1,19 @@
 # Design Patterns
 
+## Gamma Categorization
+
+* This is called  *Gamma Categorization* after Erich Gamma, one of the Gang of Four authors (GoF): Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides.
+* Desing Patterns are typically split into three categories:
+	* **Creational Patterns**: 
+		* Deal with object creation (construction) of objects.
+		* Explicit (Constructor) vs. implicit (Dependency Injection Framework (DI), Reflection, etc.).
+		* Wholesale (single statement) vs. piecewise (step-by-step).
+	* **Structural Patterns**:
+		* Concerd with the structure (e.g., class members).
+		* Many patterns are wrappers that mimic the underlying class' interface.
+		* Stress the importance of good API design.
+	* **Behavioral Patterns**: Characterize the ways in which classes or objects interact and distribute responsibility.
+
 ### What Patterns Does This Course Cover?
 
 This course covers all the GoF design patterns. Here's the full list of what is covered:

@@ -30,3 +30,6 @@ FetchContent_MakeAvailable(googletest)
 # Include sub-projects.
 add_subdirectory ("SOLID Design Principles")
 add_subdirectory ("Creational Design Patterns")
+add_subdirectory ("Structural Design Patterns")
+add_subdirectory ("Pruebas")
+

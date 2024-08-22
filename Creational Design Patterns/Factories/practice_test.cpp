@@ -3,8 +3,8 @@
 #include <gtest/gtest.h>
 using namespace std;
 
-namespace FactoryExercise {
-
+namespace FactoryExercise
+{
     struct Person
     {
         int id;
@@ -21,30 +21,23 @@ namespace FactoryExercise {
         }
     };
 
-#include "gtest/gtest.h"
+	namespace
+	{
+	    class Evaluate : public testing::Test
+	    {
+	    };
 
-    //#include "helpers/iohelper.h"
+	    TEST_F(Evaluate, SimplePersonTest)
+	    {
+	        PersonFactory pf;
 
-    //#include "exercise.cpp"
+	        auto p1 = pf.create_person("Chris");
+	        ASSERT_EQ("Chris", p1.name);
 
-
-    namespace
-    {
-        class Evaluate : public testing::Test
-        {
-        };
-
-        TEST_F(Evaluate, SimplePersonTest)
-        {
-            PersonFactory pf;
-
-            auto p1 = pf.create_person("Chris");
-            ASSERT_EQ("Chris", p1.name);
-
-            auto p2 = pf.create_person("Sarah");
-            ASSERT_EQ(1, p2.id) << "Expected the second created person's id to be = 1";
-        }
-    } // namespace
+	        auto p2 = pf.create_person("Sarah");
+	        ASSERT_EQ(1, p2.id) << "Expected the second created person's id to be = 1";
+	    }
+	} // namespace
 }
 
 int main(int ac, char* av[])
